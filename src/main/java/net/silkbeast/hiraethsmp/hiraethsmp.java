@@ -1,5 +1,6 @@
 package net.silkbeast.hiraethsmp;
 
+import net.silkbeast.hiraethsmp.block.modBlocks;
 import net.silkbeast.hiraethsmp.item.ModItems;
 import org.slf4j.Logger;
 
@@ -45,6 +46,7 @@ public class hiraethsmp
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.KEY.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(modBlocks.DUNGEON_STONE.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -55,6 +57,7 @@ public class hiraethsmp
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        modBlocks.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
 
