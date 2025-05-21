@@ -2,6 +2,7 @@ package net.silkbeast.hiraethsmp;
 
 import net.silkbeast.hiraethsmp.block.modBlocks;
 import net.silkbeast.hiraethsmp.item.ModItems;
+import net.silkbeast.hiraethsmp.item.advanced.DragonBreathItem;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -46,6 +47,7 @@ public class hiraethsmp
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.KEY.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(ModItems.DRAGONBREATHER);
                 output.accept(modBlocks.DUNGEON_STONE.get());
             }).build());
 
